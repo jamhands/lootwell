@@ -1,0 +1,12 @@
+## Interface: 11313
+## Title: Lootwell
+## Author: Jam 
+## Version: 0.0.1 
+
+ui/guildmembers.xml
+ui/mainmenu.xml
+
+util.lua
+data.lua
+mainmenu.lua
+core.lua

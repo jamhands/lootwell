@@ -1,0 +1,134 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<Button name="MainMenuLeftPanelButtonTemplate" virtual="true">
+		<Size x="298" y="50"/>
+		<Layers>
+			<Layer level="BORDER">
+				<FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="CENTER" text="Guild Members" font="Fonts\FRIZQT__.TTF">
+					<Size x="300" y="50"/>
+          <FontHeight val="24" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="10" y="-3"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<!-- <Scripts>
+			<OnLoad>
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+			</OnLoad>
+			<OnClick>
+				FriendsFrameWhoButton_OnClick(self, button);
+				PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+			</OnClick>
+			<OnEnter>
+				if (self.tooltip1 and self.tooltip2) then
+					GameTooltip:SetOwner(self, "ANCHOR_LEFT");
+					GameTooltip:SetText(self.tooltip1);
+					GameTooltip:AddLine(self.tooltip2, 1, 1, 1);
+					GameTooltip:Show();
+				end
+			</OnEnter>
+			<OnLeave function="GameTooltip_Hide"/>
+		</Scripts> -->
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
+			<Size x="298" y="50"/>
+			<Anchors>
+				<Anchor point="TOP" x="5" y="-2"/>
+			</Anchors>
+		</HighlightTexture>
+  </Button>
+  <Frame name="MainMenuLeftPanelTemplate" virtual="true">
+    <Anchors>
+      <Anchor point="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="-20" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="7" y="-7"/>
+						<Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+          <Color a="1" r="0" g="0" b="0" />
+        </Texture>
+      </Layer>
+      <Layer level="BORDER">
+				<Texture parentKey="InsetBorderRight" inherits="!UI-Frame-InnerRightTile">
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.InsetBorderTopRight" x="0" y="-7"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.InsetBorderBottomRight" x="0" y="2"/>
+					</Anchors>
+				</Texture>
+      </Layer>
+    </Layers>
+  </Frame>
+
+  <Frame name="MainMenuBodyTemplate" virtual="true">
+    <Anchors>
+      <Anchor point="TOPRIGHT">
+        <Offset>
+          <AbsDimension x="-10" y="-20" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="7" y="-7"/>
+						<Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+          <Color a="1" r="0.1" g="0.1" b="0.1" />
+        </Texture>
+      </Layer>
+    </Layers>
+  </Frame>
+
+  <Frame name="MainMenuTemplate" parent="UIParent" toplevel="true" enableMouse="true" movable="true" inherits="BasicFrameTemplateWithInset">
+    <Scripts>
+      <OnLoad>self:RegisterForDrag("LeftButton");</OnLoad>
+      <OnDragStart>self:StartMoving();</OnDragStart>
+      <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+    </Scripts>
+    <Frames>
+      <Frame name="MainMenuLeftPanel" inherits="MainMenuLeftPanelTemplate">
+        <Size>
+          <AbsDimension x="300" y="775"/>
+        </Size>
+        <Frames>
+          <Button name="MainMenuLeftPanelButton1" inherits="MainMenuLeftPanelButtonTemplate">
+            <Anchors>
+              <Anchor point="TOPLEFT" x="0" y="-5" />
+            </Anchors>
+          </Button>
+          <Button name="MainMenuLeftPanelButton2" inherits="MainMenuLeftPanelButtonTemplate">
+            <Anchors>
+              <Anchor point="TOPLEFT" x="0" y="-55" />
+            </Anchors>
+          </Button>
+          <Button name="MainMenuLeftPanelButton3" inherits="MainMenuLeftPanelButtonTemplate">
+            <Anchors>
+              <Anchor point="TOPLEFT" x="0" y="-105" />
+            </Anchors>
+          </Button>
+        </Frames>
+      </Frame>
+      <Frame name="MainMenuBody" inherits="MainMenuBodyTemplate">
+        <Size>
+          <AbsDimension x="900" y="775"/>
+        </Size>
+        <Frames>
+          <Frame name="$parentListHeader" inherits="GuildMembersHeader">
+          </Frame>
+          <ScrollFrame name="$parentScrollFrame" parentKey="scrollFrame" inherits="GuildMembersScrollFrame">
+          </ScrollFrame>
+        </Frames>
+      </Frame>
+    </Frames>
+  </Frame>
+</Ui>

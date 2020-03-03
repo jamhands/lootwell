@@ -1,0 +1,311 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+http://wowprogramming.com/FrameXML/UI.xsd">
+
+  <!-- <Frame name="ScrollChildFrameTemplate" virtual="true"> -->
+    <!-- <Size> -->
+      <!-- <AbsDimension x="500" y="800" /> -->
+    <!-- </Size> -->
+    <!-- <Anchors>
+      <Anchor point="TOPLEFT" x="0" y="0" />
+    </Anchors> -->
+    <!-- <Frames> -->
+      <!-- <Button>
+        <Size x="298" y="50"/>
+        <Anchors>
+            <Anchor point="TOPLEFT" x="0" y="-5" />
+        </Anchors>
+		    <Layers>
+          <Layer level="BORDER">
+          <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="CENTER" text="Guild Members" font="Fonts\FRIZQT__.TTF">
+            <Size x="300" y="50"/>
+                  <FontHeight val="24" />
+            <Anchors>
+            <Anchor point="TOPLEFT" x="10" y="-3"/>
+            </Anchors>
+          </FontString>
+          </Layer>
+        </Layers>
+      </Button> -->
+      <!-- <Button>
+        <Size x="298" y="50"/>
+        <Anchors>
+            <Anchor point="BOTTOMRIGHT" x="0" y="-5" />
+        </Anchors>
+		<Layers>
+		  <Layer level="BORDER">
+			<FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="CENTER" text="Guild Members" font="Fonts\FRIZQT__.TTF">
+			  <Size x="300" y="50"/>
+              <FontHeight val="24" />
+			  <Anchors>
+				<Anchor point="TOPLEFT" x="10" y="-3"/>
+			  </Anchors>
+			</FontString>
+		  </Layer>
+		</Layers>
+      </Button> -->
+    <!-- </Frames> -->
+  <!-- </Frame> -->
+<!-- inherits="UIPanelScrollFrameTemplate"  -->
+  <Frame name="GuildMembersHeader" virtual="true">
+    <Size>
+      <AbsDimension x="840" y="30" />
+    </Size>
+    <Anchors>
+      <Anchor point="TOPLEFT" x="25" y="-10"/>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture>
+          <Size>
+            <AbsDimension x="840" y="30" />
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER"/>
+          </Anchors>
+          <Color a="1" r="0" g="0" b="0" />
+        </Texture>
+      </Layer>
+      <Layer level="BORDER">
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Class" font="Fonts\FRIZQT__.TTF">
+          <Size x="35" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="5" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Name" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="50" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Rank" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="200" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Role" font="Fonts\FRIZQT__.TTF">
+          <Size x="75" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="360" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Attn" font="Fonts\FRIZQT__.TTF">
+          <Size x="30" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="445" y="0"/>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+  </Frame>
+
+
+  <Frame name="RosterMemberListItem" virtual="true">
+    <Size>
+      <AbsDimension x="860" y="30" />
+    </Size>
+    <Anchors>
+      <Anchor point="TOPLEFT" x="0" y="0"/>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture>
+          <Size>
+            <AbsDimension x="860" y="30" />
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER"/>
+          </Anchors>
+          <Color a="1" r="0.2" g="0.2" b="0.2" />
+        </Texture>
+      </Layer>
+      <Layer level="BORDER">
+        <FontString name="$parentNameFontString" parentKey="name" inherits="GameFontNormalSmall" justifyH="LEFT" text="CutieMcTootie" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="50" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentRankFontString" parentKey="rank" inherits="GameFontNormalSmall" justifyH="LEFT" text="Guild Officer" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="200" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentRoleFontString" parentKey="role" inherits="GameFontNormalSmall" justifyH="LEFT" text="Damage" font="Fonts\FRIZQT__.TTF">
+          <Size x="75" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="360" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentAttnFontString" parentKey="attendance" inherits="GameFontNormalSmall" justifyH="RIGHT" text="50%" font="Fonts\FRIZQT__.TTF">
+          <Size x="30" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="445" y="0"/>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Frame name="$parentClassIcon" parentKey="classIcon">
+        <Size>
+          <AbsDimension x="25" y="25" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="10" y="-3"/>
+        </Anchors>
+        <Layers>
+          <Layer level="ARTWORK">
+            <Texture name="$parentTexture" parentKey="texture" file="Interface\ICONS\INV_Sword_27.blp">
+              <Size>
+                <AbsDimension x="25" y="25" />
+              </Size>
+              <Anchors>
+                <Anchor point="CENTER"/>
+              </Anchors>
+            </Texture>
+          </Layer>
+        </Layers>
+      </Frame>
+
+    </Frames>
+  </Frame>
+    <!-- <Frames>
+      <Frame name="$parentIcon">
+        <Size>
+          <AbsDimension x="25" y="25" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="10" y="-3"/>
+        </Anchors>
+        <Layers>
+          <Layer level="ARTWORK">
+            <Texture file="Interface\ICONS\INV_Sword_27.blp">
+              <Size>
+                <AbsDimension x="25" y="25" />
+              </Size>
+              <Anchors>
+                <Anchor point="CENTER"/>
+              </Anchors>
+            </Texture>
+          </Layer>
+        </Layers>
+      </Frame>
+    </Frames> -->
+  <ScrollFrame name="GuildMembersScrollFrame" inherits="UIPanelScrollFrameTemplate" virtual="true">
+    <Size>
+      <AbsDimension x="840" y="725" />
+    </Size>
+    <Anchors>
+      <!-- <Anchor point="TOPLEFT" x="10" y="-10" /> -->
+      <Anchor point="TOPLEFT" x="25" y="-40"/>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="0"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+					</Anchors>
+          <Color a="1" r="0" g="0" b="0" />
+        </Texture>
+      </Layer>
+    </Layers>
+    <ScrollChild>
+      <Frame name="$parentScrollChild" parentKey="scrollChild">
+        <Size>
+          <AbsDimension x="860" y="725" />
+        </Size>
+        <!-- <Frames>
+          <Frame name="$parentListItem">
+            <Size>
+              <AbsDimension x="860" y="30" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT" x="0" y="0"/>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture>
+                  <Size>
+                    <AbsDimension x="860" y="30" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="CENTER"/>
+                  </Anchors>
+                  <Color a="1" r="0.2" g="0.2" b="0.2" />
+                </Texture>
+              </Layer>
+              <Layer level="BORDER">
+                <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="CutieMcTootie" font="Fonts\FRIZQT__.TTF">
+                  <Size x="150" y="30"/>
+                  <FontHeight val="12" />
+                  <Anchors>
+                    <Anchor point="TOPLEFT" x="50" y="0"/>
+                  </Anchors>
+                </FontString>
+                <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Guild Officer" font="Fonts\FRIZQT__.TTF">
+                  <Size x="150" y="30"/>
+                  <FontHeight val="12" />
+                  <Anchors>
+                    <Anchor point="TOPLEFT" x="200" y="0"/>
+                  </Anchors>
+                </FontString>
+                <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Damage" font="Fonts\FRIZQT__.TTF">
+                  <Size x="75" y="30"/>
+                  <FontHeight val="12" />
+                  <Anchors>
+                    <Anchor point="TOPLEFT" x="360" y="0"/>
+                  </Anchors>
+                </FontString>
+                <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="RIGHT" text="50%" font="Fonts\FRIZQT__.TTF">
+                  <Size x="30" y="30"/>
+                  <FontHeight val="12" />
+                  <Anchors>
+                    <Anchor point="TOPLEFT" x="445" y="0"/>
+                  </Anchors>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Frames>
+              <Frame name="$parentIcon">
+                <Size>
+                  <AbsDimension x="25" y="25" />
+                </Size>
+                <Anchors>
+                  <Anchor point="TOPLEFT" x="10" y="-3"/>
+                </Anchors>
+                <Layers>
+                  <Layer level="ARTWORK">
+                    <Texture file="Interface\ICONS\INV_Sword_27.blp">
+                      <Size>
+                        <AbsDimension x="25" y="25" />
+                      </Size>
+                      <Anchors>
+                        <Anchor point="CENTER"/>
+                      </Anchors>
+                    </Texture>
+                  </Layer>
+                </Layers>
+              </Frame>
+
+            </Frames>
+          </Frame>
+        </Frames> -->
+      </Frame>
+    </ScrollChild>
+  </ScrollFrame>
+
+</Ui>

@@ -94,24 +94,8 @@ function MainMenu:BuildRosterPage()
 		local rosterItem = MainMenu:BuildRosterItem(sortedRoster[key], key)
 		print("Added " .. value.name)
 	end
-	-- local rosterItem = MainMenu:BuildRosterItem(sortedRoster[1])
-	-- print(rosterItem)
-	-- rosterItem:SetParent(MainMenuBodyScrollFrame.scrollChild)
-	-- rosterItem:SetParent(UIConfig)
-	-- rosterItem:Show()
-	-- print(rosterItem:GetSize())
-	-- print(rosterItem:GetNumPoints())
-	-- print("Left " .. rosterItem:GetLeft())
-	-- print("Right " .. rosterItem:GetRight())
-	-- print("Top " .. rosterItem:GetTop())
-	-- print("Bottom " .. rosterItem:GetBottom())
-	-- print(MainMenuBodyScrollFrame.scrollChild:GetChildren())
-	-- local kids = { MainMenuBodyScrollFrame.scrollChild:GetChildren() };
 
-	-- for _, child in ipairs(kids) do
-	-- 	print(child)
-	-- end
-
+	MainMenu:ClearSelectedRosterMember()
 end
 
 -- Must not call this function on a position greater than 1 beyond the current size
@@ -120,10 +104,12 @@ function MainMenu:BuildRosterItem(member, position)
 	print ("Key = " .. position)
 	if not rosterFrames[position] then
 		print("Creating new frame for " .. position)
-		rosterItem = CreateFrame("Frame", position .. "RosterItem", MainMenuBodyScrollFrame.scrollChild, "RosterMemberListItem")
+		rosterItem = CreateFrame("Button", position .. "RosterItem", MainMenuBodyScrollFrame.scrollChild, "RosterMemberListItem")
 		-- Set position
 		rosterItem:SetPoint("TOPLEFT", MainMenuBodyScrollFrame.scrollChild, "TOPLEFT", 0, (position - 1) * -30)
 		rosterFrames[position] = rosterItem
+		rosterItem:RegisterForClicks("AnyUp")
+		rosterItem:SetScript("OnClick", MainMenu.handleRosterItemClick)
 	else
 		rosterItem = rosterFrames[position]
 	end
@@ -150,4 +136,31 @@ function MainMenu:HideRosterItem(position)
 	end
 	rosterFrames[position]:Hide()
 	print("Roster item hidden: " .. position)
+end
+
+function MainMenu.handleRosterItemClick(self, button, down)
+	-- On m1 button up
+	if button == "LeftButton" and not down then
+		MainMenu:SetSelectedRosterMember(self)
+	end
+end
+
+local selectedRosterMember = nil
+local selectedRosterWidget = nil
+
+function MainMenu:SetSelectedRosterMember(widget)
+	MainMenu:ClearSelectedRosterMember()
+	selectedRosterWidget = widget
+	selectedRosterMember = widget.name:GetText()
+	print(selectedRosterMember)
+	selectedRosterWidget:LockHighlight()
+end
+
+function MainMenu:ClearSelectedRosterMember()
+	if selectedRosterWidget ~= nil then
+		-- Unset the current widget
+		selectedRosterWidget:UnlockHighlight()
+	end
+	selectedRosterWidget = nil
+	selectedRosterMember = nil
 end

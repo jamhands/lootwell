@@ -108,7 +108,7 @@ http://wowprogramming.com/FrameXML/UI.xsd">
   </Frame>
 
 
-  <Frame name="RosterMemberListItem" virtual="true">
+  <Button name="RosterMemberListItem" virtual="true">
     <Size>
       <AbsDimension x="860" y="30" />
     </Size>
@@ -181,7 +181,19 @@ http://wowprogramming.com/FrameXML/UI.xsd">
       </Frame>
 
     </Frames>
-  </Frame>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD">
+			<Size x="860" y="30"/>
+			<Anchors>
+				<Anchor point="TOPLEFT" x="0" y="0"/>
+			</Anchors>
+		</HighlightTexture>
+		<!-- <PushedTexture file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD">
+			<Size x="860" y="30"/>
+			<Anchors>
+				<Anchor point="TOPLEFT" x="0" y="0"/>
+			</Anchors>
+		</PushedTexture> -->
+  </Button>
     <!-- <Frames>
       <Frame name="$parentIcon">
         <Size>

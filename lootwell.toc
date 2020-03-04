@@ -4,6 +4,7 @@
 ## Version: 0.0.1 
 
 ui/guildmembers.xml
+ui/gear.xml
 ui/mainmenu.xml
 
 util.lua

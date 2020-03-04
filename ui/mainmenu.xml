@@ -39,6 +39,27 @@
 			</Anchors>
 		</HighlightTexture>
   </Button>
+	<!-- <Button name="MainMenuBodyButtonTemplate" inherits="GameMenuButtonTemplate" virtual="true">
+		<Size x="298" y="50"/>
+		<Layers>
+			<Layer level="BORDER">
+				<FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="CENTER" text="Guild Members" font="Fonts\FRIZQT__.TTF">
+					<Size x="300" y="50"/>
+          <FontHeight val="24" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="10" y="-3"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
+			<Size x="298" y="50"/>
+			<Anchors>
+				<Anchor point="TOP" x="5" y="-2"/>
+			</Anchors>
+		</HighlightTexture>
+  </Button> -->
+  
   <Frame name="MainMenuLeftPanelTemplate" virtual="true">
     <Anchors>
       <Anchor point="TOPLEFT">
@@ -118,7 +139,7 @@
           </Button>
         </Frames>
       </Frame>
-      <Frame name="MainMenuBody" inherits="MainMenuBodyTemplate">
+      <Frame name="GuildMembersPage" inherits="MainMenuBodyTemplate">
         <Size>
           <AbsDimension x="900" y="775"/>
         </Size>
@@ -127,6 +148,29 @@
           </Frame>
           <ScrollFrame name="$parentScrollFrame" parentKey="scrollFrame" inherits="GuildMembersScrollFrame">
           </ScrollFrame>
+          <Button name="$parentGearButton" parentKey="gearButton" inherits="UIPanelButtonNoTooltipTemplate" text="Gear">
+            <Size x="78" y="30"/>
+            <Anchors>
+              <Anchor point="BOTTOMRIGHT" x="-40" y="5"/>
+            </Anchors>
+          </Button>
+        </Frames>
+      </Frame>
+      <Frame name="GearPage" inherits="MainMenuBodyTemplate" hidden="true">
+        <Size>
+          <AbsDimension x="900" y="775"/>
+        </Size>
+        <Frames>
+          <Frame name="$parentListHeader" inherits="GearHeader">
+          </Frame>
+          <ScrollFrame name="$parentScrollFrame" parentKey="scrollFrame" inherits="GearScrollFrame">
+          </ScrollFrame>
+          <Button name="$parentBackButton" parentKey="backButton" inherits="UIPanelButtonNoTooltipTemplate" text="Back">
+            <Size x="78" y="30"/>
+            <Anchors>
+              <Anchor point="BOTTOMLEFT" x="40" y="5"/>
+            </Anchors>
+          </Button>
         </Frames>
       </Frame>
     </Frames>

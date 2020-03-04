@@ -1,10 +1,7 @@
-<!-- Templates related to the "Guild Members" page are located here -->
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.blizzard.com/wow/ui/
-http://wowprogramming.com/FrameXML/UI.xsd">
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  <Frame name="GuildMembersHeader" virtual="true">
+  <Frame name="GearHeader" virtual="true">
     <Size>
       <AbsDimension x="840" y="30" />
     </Size>
@@ -24,47 +21,46 @@ http://wowprogramming.com/FrameXML/UI.xsd">
         </Texture>
       </Layer>
       <Layer level="BORDER">
-        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Class" font="Fonts\FRIZQT__.TTF">
+        <!-- <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Class" font="Fonts\FRIZQT__.TTF">
           <Size x="35" y="30"/>
           <FontHeight val="12" />
           <Anchors>
             <Anchor point="TOPLEFT" x="5" y="0"/>
           </Anchors>
-        </FontString>
+        </FontString> -->
         <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Name" font="Fonts\FRIZQT__.TTF">
-          <Size x="150" y="30"/>
+          <Size x="200" y="30"/>
           <FontHeight val="12" />
           <Anchors>
             <Anchor point="TOPLEFT" x="50" y="0"/>
           </Anchors>
         </FontString>
-        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Rank" font="Fonts\FRIZQT__.TTF">
-          <Size x="150" y="30"/>
-          <FontHeight val="12" />
-          <Anchors>
-            <Anchor point="TOPLEFT" x="200" y="0"/>
-          </Anchors>
-        </FontString>
-        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Role" font="Fonts\FRIZQT__.TTF">
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Recvd On" font="Fonts\FRIZQT__.TTF">
           <Size x="75" y="30"/>
           <FontHeight val="12" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="360" y="0"/>
+            <Anchor point="TOPLEFT" x="250" y="0"/>
           </Anchors>
         </FontString>
-        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Attn" font="Fonts\FRIZQT__.TTF">
-          <Size x="30" y="30"/>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Source" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
           <FontHeight val="12" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="445" y="0"/>
+            <Anchor point="TOPLEFT" x="325" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentFontString" inherits="GameFontNormalSmall" justifyH="LEFT" text="Notes" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="475" y="0"/>
           </Anchors>
         </FontString>
       </Layer>
     </Layers>
   </Frame>
 
-
-  <Button name="RosterMemberListItem" virtual="true">
+  <Button name="GearListItem" virtual="true">
     <Size>
       <AbsDimension x="860" y="30" />
     </Size>
@@ -84,38 +80,38 @@ http://wowprogramming.com/FrameXML/UI.xsd">
         </Texture>
       </Layer>
       <Layer level="BORDER">
-        <FontString name="$parentNameFontString" parentKey="name" inherits="GameFontNormalSmall" justifyH="LEFT" text="CutieMcTootie" font="Fonts\FRIZQT__.TTF">
-          <Size x="150" y="30"/>
+        <FontString name="$parentNameFontString" parentKey="name" inherits="GameFontNormalSmall" justifyH="LEFT" text="Maladath" font="Fonts\FRIZQT__.TTF">
+          <Size x="200" y="30"/>
           <FontHeight val="12" />
           <Anchors>
             <Anchor point="TOPLEFT" x="50" y="0"/>
           </Anchors>
         </FontString>
-        <FontString name="$parentRankFontString" parentKey="rank" inherits="GameFontNormalSmall" justifyH="LEFT" text="Guild Officer" font="Fonts\FRIZQT__.TTF">
-          <Size x="150" y="30"/>
-          <FontHeight val="12" />
-          <Anchors>
-            <Anchor point="TOPLEFT" x="200" y="0"/>
-          </Anchors>
-        </FontString>
-        <FontString name="$parentRoleFontString" parentKey="role" inherits="GameFontNormalSmall" justifyH="LEFT" text="Damage" font="Fonts\FRIZQT__.TTF">
+        <FontString name="$parentRcvdOnFontString" parentKey="rcvdOn" inherits="GameFontNormalSmall" justifyH="LEFT" text="2020-02-01" font="Fonts\FRIZQT__.TTF">
           <Size x="75" y="30"/>
           <FontHeight val="12" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="360" y="0"/>
+            <Anchor point="TOPLEFT" x="250" y="0"/>
           </Anchors>
         </FontString>
-        <FontString name="$parentAttnFontString" parentKey="attendance" inherits="GameFontNormalSmall" justifyH="RIGHT" text="50%" font="Fonts\FRIZQT__.TTF">
-          <Size x="30" y="30"/>
+        <FontString name="$parentSourceFontString" parentKey="source" inherits="GameFontNormalSmall" justifyH="LEFT" text="Broodlord Lashlayer" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
           <FontHeight val="12" />
           <Anchors>
-            <Anchor point="TOPLEFT" x="445" y="0"/>
+            <Anchor point="TOPLEFT" x="325" y="0"/>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentNotesFontString" parentKey="notes" inherits="GameFontNormalSmall" justifyH="RIGHT" text="BIS offhand" font="Fonts\FRIZQT__.TTF">
+          <Size x="150" y="30"/>
+          <FontHeight val="12" />
+          <Anchors>
+            <Anchor point="TOPLEFT" x="475" y="0"/>
           </Anchors>
         </FontString>
       </Layer>
     </Layers>
     <Frames>
-      <Frame name="$parentClassIcon" parentKey="classIcon">
+      <Frame name="$parentItemIcon" parentKey="itemIcon">
         <Size>
           <AbsDimension x="25" y="25" />
         </Size>
@@ -135,24 +131,17 @@ http://wowprogramming.com/FrameXML/UI.xsd">
           </Layer>
         </Layers>
       </Frame>
-
     </Frames>
-		<HighlightTexture file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD">
-			<Size x="860" y="30"/>
-			<Anchors>
-				<Anchor point="TOPLEFT" x="0" y="0"/>
-			</Anchors>
-		</HighlightTexture>
-		<!-- <PushedTexture file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD">
-			<Size x="860" y="30"/>
-			<Anchors>
-				<Anchor point="TOPLEFT" x="0" y="0"/>
-			</Anchors>
-		</PushedTexture> -->
+	<HighlightTexture file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD">
+	  <Size x="860" y="30"/>
+	  <Anchors>
+	  	<Anchor point="TOPLEFT" x="0" y="0"/>
+	  </Anchors>
+	</HighlightTexture>
   </Button>
-  <ScrollFrame name="GuildMembersScrollFrame" inherits="UIPanelScrollFrameTemplate" virtual="true">
+  <ScrollFrame name="GearScrollFrame" inherits="UIPanelScrollFrameTemplate" virtual="true">
     <Size>
-      <AbsDimension x="840" y="700" />
+      <AbsDimension x="840" y="625" />
     </Size>
     <Anchors>
       <Anchor point="TOPLEFT" x="25" y="-40"/>
@@ -160,10 +149,10 @@ http://wowprogramming.com/FrameXML/UI.xsd">
     <Layers>
       <Layer level="BACKGROUND">
         <Texture>
-					<Anchors>
-						<Anchor point="TOPLEFT" x="0" y="0"/>
-						<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
-					</Anchors>
+          <Anchors>
+            <Anchor point="TOPLEFT" x="0" y="0"/>
+            <Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+          </Anchors>
           <Color a="1" r="0" g="0" b="0" />
         </Texture>
       </Layer>
@@ -176,5 +165,4 @@ http://wowprogramming.com/FrameXML/UI.xsd">
       </Frame>
     </ScrollChild>
   </ScrollFrame>
-
 </Ui>

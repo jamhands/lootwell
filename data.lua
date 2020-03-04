@@ -16,6 +16,12 @@ function Data:QueryForItem(id)
     end)
 end
 
+function Data:QueryForItemInstant(id)
+    local item = {}
+    item.itemId, item.itemType, item.itemSubType, item.itemEquipLoc, item.icon, item.classId, item.subClassId = GetItemInfoInstant(id)
+    return item
+end
+
 function Data:QueryForItemByLink(link)
     item = Item:CreateFromItemLink(link)
     item:ContinueOnItemLoad(function()
@@ -190,4 +196,33 @@ function Data:ListGear(rosterMember)
             print("No gear for " .. rosterMember .. "!")
         end
     end
+end
+
+function Data:BuildGearDetails(rosterMember)
+    local gearDetails = {}
+    print(rosterMember)
+    print(Data.roster)
+    if Data.roster[rosterMember].gear == nil then
+        return gearDetails
+    end
+    for key, value in ipairs(Data.roster[rosterMember].gear) do
+        local item = Data:QueryForItemInstant(value)
+        if item ~= nil then
+            table.insert(gearDetails, Data:QueryForItemInstant(value))
+        end
+    end
+    return gearDetails
+end
+
+-- Assumes that arguments are item objects
+function Data.defaultGearSortOrder(item1, item2)
+    if item1.itemType ~= item2.itemType
+    then
+        return item1.itemType < item2.itemType
+    end
+    if item1.itemEquipLoc ~= item2.itemEquipLoc
+    then
+        return item1.itemEquipLoc < item2.itemEquipLoc
+    end
+    return item1.itemId < item2.itemId
 end
